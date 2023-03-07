@@ -2,9 +2,12 @@ const connectToMongo = require('./db')
 
 connectToMongo();
 
+
 const express = require('express')
 const app = express()
 const port = 3000
+// agar aap log use karna chahte ho req.body ko toh aapko ek middleware use karna padega
+app.use(express.json())
 
 
 // Available Routes
