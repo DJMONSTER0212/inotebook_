@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
-
+const {Schema} = mongoose;
 const NotesSchema = new Schema({
+    user:{
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'user'
+    },      // yeah field isliye daal rahe hai ki taaki koi dusra user uske notes ko na dekh paaye 
     title:{
         type:String,
         required : true
