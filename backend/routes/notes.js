@@ -39,4 +39,33 @@ router.post('/addnote', fetchUser, [
 
 })
 
+// route 3 : update an existing node using Post : "/api/notes/updatenode". Login required
+
+router.put('/updatenote/:id', fetchUser, async (req, res) => {
+    const {title,description,tag} = req.body;
+    // create a newNote Object
+    const newNote = {};
+    if(title){
+        newNote.title = title;
+    } 
+    if(description){
+        newNote.description = description;
+    } 
+    if(tag){
+        newNote.tag = tag;
+    } 
+
+    // find  the node to be updated and Update it
+    let note = await Note.findById(req.params.id);
+    if(!note){return res.status(404).send("Not found")};
+    if(note.user.toString()!== req.user.id){
+        return res.status(401).send("Not allowed")
+    }
+
+    note = await Note.findByIdAndUpdate(req.params.id, {$set: newNote},{new : true})  // new true ka matlab yeah hai ki agar koi naya contact aata hai toh woh create ho jaayega basically.
+    res.json({note});
+
+
+})
+
 module.exports = router 
