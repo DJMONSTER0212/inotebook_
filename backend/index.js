@@ -15,5 +15,5 @@ app.use('/api/auth',require('./routes/auth.js'))  // app.use kar k routes ko lin
 app.use('/api/notes',require('./routes/notes.js'))  // app.use kar k routes ko link karenge   
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`iNotebook backend listening on port ${port}`)
 })
