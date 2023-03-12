@@ -12,6 +12,64 @@ const NoteState = (props)=>{
             "tag": "personal",
             "date": "2023-03-09T11:28:39.267Z",
             "__v": 0
+          },{
+            "_id": "6409c2e71463b7c7649057ac",
+            "user": "64094b2c553b7c5853e2128b",
+            "title": "My title2",
+            "description": "this is the description of 2 trial",
+            "tag": "personal",
+            "date": "2023-03-09T11:28:39.267Z",
+            "__v": 0
+          },{
+            "_id": "6409c2e71463b7c7649057ac",
+            "user": "64094b2c553b7c5853e2128b",
+            "title": "My title3",
+            "description": "this is the description of 3 trial",
+            "tag": "personal",
+            "date": "2023-03-09T11:28:39.267Z",
+            "__v": 0
+          },{
+            "_id": "6409c2e71463b7c7649057ac",
+            "user": "64094b2c553b7c5853e2128b",
+            "title": "My title 4",
+            "description": "this is the description of 4 trial",
+            "tag": "personal",
+            "date": "2023-03-09T11:28:39.267Z",
+            "__v": 0
+          },
+          {
+            "_id": "6409c2e71463b7c7649057ac",
+            "user": "64094b2c553b7c5853e2128b",
+            "title": "My title",
+            "description": "this is the description of first trial",
+            "tag": "personal",
+            "date": "2023-03-09T11:28:39.267Z",
+            "__v": 0
+          },
+          {
+            "_id": "6409c2e71463b7c7649057ac",
+            "user": "64094b2c553b7c5853e2128b",
+            "title": "My title",
+            "description": "this is the description of first trial",
+            "tag": "personal",
+            "date": "2023-03-09T11:28:39.267Z",
+            "__v": 0
+          },{
+            "_id": "6409c2e71463b7c7649057ac",
+            "user": "64094b2c553b7c5853e2128b",
+            "title": "My title",
+            "description": "this is the description of first trial",
+            "tag": "personal",
+            "date": "2023-03-09T11:28:39.267Z",
+            "__v": 0
+          },{
+            "_id": "6409c2e71463b7c7649057ac",
+            "user": "64094b2c553b7c5853e2128b",
+            "title": "My title",
+            "description": "this is the description of first trial",
+            "tag": "personal",
+            "date": "2023-03-09T11:28:39.267Z",
+            "__v": 0
           }
     ]
     const [notes,setNotes] = useState(notesInitial)
