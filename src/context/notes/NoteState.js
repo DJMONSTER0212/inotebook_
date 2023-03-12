@@ -80,9 +80,9 @@ const NoteState = (props)=>{
       let note = {
         "_id": "6409c2e714263b7c76490537ac",
             "user": "64094b2c553b7c5853e2128b",
-            "title": "My ADDED",
-            "description": "this is the description of first trial",
-            "tag": "personal",
+            "title": title,
+            "description": description,
+            "tag": tag,
             "date": "2023-03-09T11:28:39.267Z",
             "__v": 0
       };
