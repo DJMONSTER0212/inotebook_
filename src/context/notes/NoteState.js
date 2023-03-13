@@ -38,19 +38,8 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({title,description,tag}), // body data type must match "Content-Type" header
     });
-    const json = await response.json();
-    console.log(json)
-    console.log("Adding a new note")
-    let note = {
-      "_id": "6409c2e714263b7c76490537ac",
-      "user": "64094b2c553b7c5853e2128b",
-      "title": title,
-      "description": description,
-      "tag": tag,
-      "date": "2023-03-09T11:28:39.267Z",
-      "__v": 0
-    };
-    setNotes(notes.concat(note))
+    const note = await response.json();
+    setNotes(notes.concat(note)) 
   }
   //Delete a Note
   
