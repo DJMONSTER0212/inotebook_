@@ -17,15 +17,16 @@ router.post('/createuser', [
 ], async (req, res) => {
   //if there are errors return bad request and the error
   const errors = validationResult(req);
+  let success = false;
   if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+    return res.status(400).json({success, errors: errors.array() });
   }
   // check whether the user with exits already
 
   try {
     let user = await User.findOne({ email: req.body.email });
     if (user) {
-      return res.status(400).json({ error: "sorry a user with the entered email already exist" })
+      return res.status(400).json({ success,error: "sorry a user with the entered email already exist" })
     }
     const salt = await bcrypt.genSalt(10);
     let secPass = await bcrypt.hash(req.body.password, salt)  //it returns a promise
@@ -42,11 +43,12 @@ router.post('/createuser', [
       }
     }
     const authToken = jwt.sign(data,JWT_SECRET)
-    console.log(authToken);
-    res.json({authToken})
+    success = true;
+    console.log(success,authToken);
+    res.json({success,authToken})
     // res.send(req.body)
   } catch (error) {
-    console.log(error.message)
+    console.log(success,error.message)
     res.status(500).send("Internal Server error occured")
   }
 
