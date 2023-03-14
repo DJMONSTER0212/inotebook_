@@ -1,7 +1,13 @@
 import React,{useEffect} from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  let navigate = useNavigate();
+  const handleLogout=()=>{
+    localStorage.removeItem('token');
+    navigate('/login')
+  }
   let location = useLocation();
   useEffect(()=>{
     // console.log(location.pathname)
@@ -23,8 +29,10 @@ const Navbar = () => {
                 <Link className={`nav-link ${location.pathname==="/about"?"active":""}`} aria-current="page" to="/about">About</Link>
               </li>
             </ul>
+            {!localStorage.getItem('token')?<div>
             <Link className="btn btn-primary mx-1" to="/login"  role="button">Login</Link>
             <Link className="btn btn-primary mx-1" to="/signup" role="button">SignUp</Link>
+            </div>:<button className='btn btn-primary' onClick={handleLogout}>Logout</button>}
           </div>
         </div>
       </nav>

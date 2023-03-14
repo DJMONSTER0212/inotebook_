@@ -15,7 +15,7 @@ const NoteState = (props) => {
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
-        "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwOTRiMmM1NTNiN2M1ODUzZTIxMjhiIn0sImlhdCI6MTY3ODM1MjM0N30.L0NZawE5gMO-wMQQNxX1gagEzvoz1Bp3ExtA7qQctq8"
+        "auth-token": localStorage.getItem('token')
       },
        // body data type must match "Content-Type" header
     });
@@ -34,7 +34,7 @@ const NoteState = (props) => {
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
-        "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwOTRiMmM1NTNiN2M1ODUzZTIxMjhiIn0sImlhdCI6MTY3ODM1MjM0N30.L0NZawE5gMO-wMQQNxX1gagEzvoz1Bp3ExtA7qQctq8"
+        "auth-token":localStorage.getItem('token')
       },
       body: JSON.stringify({title,description,tag}), // body data type must match "Content-Type" header
     });
@@ -51,7 +51,7 @@ const NoteState = (props) => {
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
-        "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwOTRiMmM1NTNiN2M1ODUzZTIxMjhiIn0sImlhdCI6MTY3ODM1MjM0N30.L0NZawE5gMO-wMQQNxX1gagEzvoz1Bp3ExtA7qQctq8"
+        "auth-token":localStorage.getItem('token')
       },
       
     });
@@ -75,7 +75,7 @@ const NoteState = (props) => {
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
-        "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwOTRiMmM1NTNiN2M1ODUzZTIxMjhiIn0sImlhdCI6MTY3ODM1MjM0N30.L0NZawE5gMO-wMQQNxX1gagEzvoz1Bp3ExtA7qQctq8"
+        "auth-token":localStorage.getItem('token')
       },
       body: JSON.stringify({title,description,tag}), // body data type must match "Content-Type" header
     });

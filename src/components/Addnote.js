@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useContext } from 'react';
 import noteContext from "../context/notes/NoteContext"
-const Addnote = () => {
+const Addnote = (props) => {
     const context = useContext(noteContext)
   const {addNote } = context;
 
@@ -10,6 +10,7 @@ const Addnote = () => {
     e.preventDefault()
     addNote(note.title,note.description,note.tag);
     setNote({title:"",description:"",tag:""});
+    props.showAlert("Added Successfully","success");
   }
   const onChange = (e)=>{
     setNote({...note,[e.target.name]:e.target.value}) // jo bhi value is note object k ander hai woh rahe lekin jo properties yaha aage likhi jaa rhi hai inko add ya overwrite kar de
