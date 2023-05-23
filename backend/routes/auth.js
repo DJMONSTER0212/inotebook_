@@ -11,7 +11,7 @@ const fetchUser = require('../middleware/fetchUser')
 const JWT_SECRET = "HOLOA hola It's the monster haha haha"
 
 router.post('/createuser', [
-  body('name', 'Enter a valid Name').isLength({ min: 3 }),
+  body('name', 'Enter a valid Name').isLength({ min: 3 }), //using the express validator for validations
   body('email', 'Enter a valid Email').isEmail(),
   body('password', 'Password must be atleast 5 characters').isLength({ min: 5 })
 ], async (req, res) => {
